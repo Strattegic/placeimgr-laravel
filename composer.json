@@ -1,0 +1,31 @@
+{
+    "name": "Strattegic/PlaceImgr",
+    "description": "A simple way to have great working placeholders in your application. No matter if you are developing on- or offline. This package has the right tool for the job.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mathias Strathausen",
+            "email": "m.strathausen@gmail.com"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "Strattegic\\PlaceImgr\\": "src"
+        }
+    },
+
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Strattegic\\PlaceImgr\\PlaceImgrServiceProvider"
+            ],
+            "aliases": {
+                "PlaceImgr": "Strattegic\\PlaceImgr\\PlaceImgrFacade"
+            }
+        }
+    },
+
+    "require": {}
+}
