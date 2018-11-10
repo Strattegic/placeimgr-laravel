@@ -7,6 +7,9 @@ Currently it only supports Blade directives.
 ```php
 // creates an <img> tag with the dimensions 500x400
 @placeimgr(500,400)
+
+// prints only the url for the placeholder (useful when you want to take care of the img tag yourself)
+@placeimgr_url(500,400)
 ```
 
 ### Configure the placeholder image service
