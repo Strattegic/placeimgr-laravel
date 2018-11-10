@@ -18,6 +18,22 @@ class PlaceImgrBase
 
   protected function getImageHtmlTag($width, $height)
   {
+    $url = $this -> createUrl($width, $height);
+
+    // return the img tag
+  	return "<img src='" . $url . "'>";
+  }
+
+  protected function getImageUrl($width, $height)
+  {
+    $url = $this -> createUrl($width, $height);
+
+    // return just the url
+    return $url;
+  }
+
+  private function createUrl($width, $height)
+  {
     $url = $this -> replaceUrlParams($width, $height);
 
     // Cached version?
@@ -26,8 +42,7 @@ class PlaceImgrBase
       $url = $this -> imageCache -> cacheOrRetrieveUrl( $this -> imageService, $url, $width, $height );
     }
 
-    // return the img tag
-  	return "<img src='" . $url . "'>";
+    return $url;
   }
 
   private function replaceUrlParams($width, $height)

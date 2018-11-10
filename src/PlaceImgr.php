@@ -13,8 +13,13 @@ class PlaceImgr extends PlaceImgrBase
   *
   * @return img-Tag
   **/
-  public function make($width, $height, $class = null)
+  public function make($width, $height)
   {
   	return $this -> getImageHtmlTag($width, $height);
+  }
+
+  public function url($width, $height)
+  {
+    return $this -> getImageUrl($width, $height);
   }
 }

@@ -21,6 +21,13 @@ class PlaceImgrServiceProvider extends ServiceProvider
             return $placeholder -> make( intval($width), intval($height) );
         });
 
+        Blade::directive('placeimgr_url', function ($expression) use ($placeholder) {
+
+            list($width, $height) = explode(',', $expression);
+
+            return $placeholder -> url( intval($width), intval($height) );
+        });
+
         $this->publishes([
             __DIR__.'/config/public.php' => config_path('placeimgr.php'),
         ]);
