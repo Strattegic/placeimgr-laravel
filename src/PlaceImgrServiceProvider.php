@@ -22,7 +22,7 @@ class PlaceImgrServiceProvider extends ServiceProvider
         });
 
         $this->publishes([
-            __DIR__.'/config/config.php' => config_path('placeholders.php'),
+            __DIR__.'/config/public.php' => config_path('placeimgr.php'),
         ]);
     }
 
@@ -34,11 +34,14 @@ class PlaceImgrServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(PlaceImgr::class, function () {
-            return new PlaceImgr();
+            return new PlaceImgr(new ImageCache());
         });
+
         $this->app->alias(PlaceImgr::class, 'placeImgr');
 
-        $this->mergeConfigFrom(__DIR__.'/config/config.php', 'placeholders');
-        $this->mergeConfigFrom(__DIR__.'/config/services.php', 'placeholders.services');
+        // merge configs
+        $this->mergeConfigFrom(__DIR__.'/config/public.php', 'placeimgr');
+        $this->mergeConfigFrom(__DIR__.'/config/core.php', 'placeimgr.core');
+        $this->mergeConfigFrom(__DIR__.'/config/services.php', 'placeimgr.services');
     }
 }

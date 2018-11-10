@@ -1,6 +1,6 @@
 {
-    "name": "Strattegic/PlaceImgr",
-    "description": "A simple way to have great working placeholders in your application. No matter if you are developing on- or offline. This package has the right tool for the job.",
+    "name": "strattegic/placeimgr",
+    "description": "A simple way to have great working placeholders in your Laravel application. No matter if you are developing on- or offline. This package has the right tool for the job.",
     "type": "library",
     "license": "MIT",
     "authors": [
