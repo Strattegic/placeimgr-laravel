@@ -19,7 +19,7 @@ return [
 		placezombie		- for a bit of horror
 
 	**/
-	'placeholder-service' => 'placezombie',
+	'placeholder-service' => 'placekitten',
 
 	/**
 	*	Toggles the caching of placeholder images.
